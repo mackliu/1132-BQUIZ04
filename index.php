@@ -8,11 +8,12 @@
 
     <title>┌精品電子商務網站」</title>
     <link href="./css/css.css" rel="stylesheet" type="text/css">
+    <script src="./js/jquery-3.4.1.min.js"></script>
     <script src="./js/js.js"></script>
 </head>
 
 <body>
-    <iframe name="back" style="display:none;"></iframe>
+
     <div id="main">
         <div id="top">
             <a href="?">
@@ -27,7 +28,7 @@
                 <a href="?do=admin">管理登入</a>
             </div>
 
-            情人節特惠活動 &nbsp; 為了慶祝七夕情人節，將舉辦情人兩人到現場有七七折之特惠活動~
+           
         </div>
 
         <div id="left" class="ct">

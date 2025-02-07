@@ -8,14 +8,14 @@
 
     <title>┌精品電子商務網站」</title>
     <link href="./css/css.css" rel="stylesheet" type="text/css">
+	<script src="./js/jquery-3.4.1.min.js"></script>
     <script src="./js/js.js"></script>
 </head>
 
 <body>
-    <iframe name="back" style="display:none;"></iframe>
     <div id="main">
         <div id="top">
-            <a href="?">
+            <a href="index.php">
                 <img src="./icon/0416.jpg">
             </a>
             <img src="./icon/0417.jpg">
