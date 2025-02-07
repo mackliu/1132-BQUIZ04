@@ -59,7 +59,7 @@ function save($array){
 
 }
 function del($array){
-    $sql="select * from $this->table ";
+    $sql="delete  from $this->table ";
     if(is_array($array)){
         $tmp=$this->arrayToSQL($array);
         $sql .= " where ".join(" && ",$tmp);
