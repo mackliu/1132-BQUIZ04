@@ -32,6 +32,17 @@
             </div>
         </div>
         <div id="right">
+		<?php 
+        $do=$_GET['do']??'admin';
+        $file="back/".$do.".php";
+        if(file_exists($file)){
+            include $file;
+        }else{
+            include "back/admin.php";
+        }
+
+
+        ?>
         </div>
         <div id="bottom" style="line-height:70px; color:#FFF; background:url(icon/bot.png);" class="ct">
             頁尾版權 : </div>
