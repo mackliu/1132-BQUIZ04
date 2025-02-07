@@ -27,10 +27,22 @@
 <script>
     function login(){
         let ans=$("#ans").val();
+    
         $.get("./api/chk_ans.php",{ans},function(res){
             //console.log(ans,res)
             if(parseInt(res)){
-                alert("正確")
+                $.get("api/chk_pw.php",{
+                    acc:$("#acc").val(),
+                    pw:$("#pw").val()
+                },function(res){
+                    //console.log(res)
+                    if(parseInt(res)){
+                       location.href='index.php';
+                    }else{
+                        alert("帳號或密碼錯誤")
+                    }
+                }
+            )
             }else{
                 alert("驗證碼錯誤，請重新輸入")
             }
