@@ -13,27 +13,38 @@
 </div>
 
 <table class="all">
+    <?php
+    $bigs=$Type->all(['big_id'=>0]);
+    foreach($bigs as $big):
+    ?>
     <tr>
-        <td class="tt">流行皮件</td>
+        <td class="tt"><?=$big['name'];?></td>
         <td class="tt ct">
-            <button>修改</button>
+            <button data-id="<?=$big['id'];?>">修改</button>
             <button>刪除</button>
         </td>
     </tr>
-    <tr class='ct'>
-        <td class="pp">女用皮件</td>
-        <td class="pp">
-            <button>修改</button>
-            <button>刪除</button>
-        </td>
-    </tr>
-    <tr class='ct'>
-        <td class="pp">男用皮件尸</td>
-        <td class="pp">
-            <button>修改</button>
-            <button>刪除</button>
-        </td>
-    </tr>
+    <?php
+    if($Type->count(['big_id'=>$big['id']])>0):
+        $mids=$Type->all(['big_id'=>$big['id']]);
+        foreach($mids as $mid):
+    ?>
+            <tr class='ct'>
+                <td class="pp"><?=$mid['name'];?></td>
+                <td class="pp">
+                    <button data-id="<?=$mid['id'];?>">修改</button>
+                    <button>刪除</button>
+                </td>
+            </tr>
+    <?php
+        endforeach;
+    endif;
+    ?>
+
+    <?php
+    endforeach;
+    ?>
+
 </table>
 <script>
 getBigs();
@@ -52,12 +63,13 @@ function addType(type){
     }
 
     $.post("./api/save_types.php",{name,big_id},function(){
-                if(type=='big'){
+                /* if(type=='big'){
                     getBigs();
                     $("#big").val("");
                 }else{
                     $("#mid").val("");
-                }
+                } */
+                location.reload();
             })
 }
 
