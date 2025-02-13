@@ -20,7 +20,7 @@
     <tr>
         <td class="tt"><?=$big['name'];?></td>
         <td class="tt ct">
-            <button data-id="<?=$big['id'];?>" onclick="editType(<?=$big['id'];?>,this)">修改</button>
+            <button  onclick="editType(<?=$big['id'];?>,this)">修改</button>
             <button>刪除</button>
         </td>
     </tr>
@@ -32,7 +32,7 @@
             <tr class='ct'>
                 <td class="pp"><?=$mid['name'];?></td>
                 <td class="pp">
-                    <button data-id="<?=$mid['id'];?>" onclick="editType(<?=$mid['id'];?>,this)">修改</button>
+                    <button  onclick="editType(<?=$mid['id'];?>,this)">修改</button>
                     <button>刪除</button>
                 </td>
             </tr>
