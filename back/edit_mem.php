@@ -11,7 +11,7 @@ $row=$Mem->find($_GET['id']);
     </tr>
     <tr>
         <td class="tt ct">密碼</td>
-        <td class="pp"><?=str_repeat("*",strlen($row['acc']));?></td>
+        <td class="pp"><?=str_repeat("*",strlen($row['pw']));?></td>
     </tr>
     <tr>
         <td class="tt ct">姓名</td>
@@ -34,6 +34,6 @@ $row=$Mem->find($_GET['id']);
     <input type="hidden" name="id" value="<?=$_GET['id'];?>">
     <input type="submit" value="編輯">
     <input type="reset" value="重置">
-    <input type="button" value="取消" onclick="location.href=?'do=mem'">
+    <input type="button" value="取消" onclick="location.href='?do=mem'">
 </div>
 </form>
