@@ -1,7 +1,10 @@
 <?php include_once "db.php";
 
-
-$_POST['pr']=serialize($_POST['pr']);
+if(!empty($_POST['pr'])){
+    $_POST['pr']=serialize($_POST['pr']);
+}else{
+    $_POST['pr']=serialize([]);
+}
 $Admin->save($_POST);
 
 
