@@ -1,5 +1,6 @@
 <h2 class="ct">新增商品</h2>
 
+<form action="./api/save_item.php" method="post" enctype="multipart/form-data">
 <table class="all">
     <tr>
         <td class="tt ct">所屬大分類</td>
@@ -35,7 +36,7 @@
     </tr>
     <tr>
         <td class="tt ct">商品圖片</td>
-        <td class="pp"><input type="text" name="img" id="img"></td>
+        <td class="pp"><input type="file" name="img" id="img"></td>
     </tr>
     <tr>
         <td class="tt ct">商品介紹</td>
@@ -47,7 +48,7 @@
     <input type="reset" value="重置">
     <input type="button" value="返回">
 </div>
-
+</form>
 <script>
 
 getTypes('big');
@@ -55,7 +56,6 @@ getTypes('big');
 $("#big").on("change",function(){
     getTypes('mid');
 })
-
 
 function getTypes(type){
     let big_id=0;
