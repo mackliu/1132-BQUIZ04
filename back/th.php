@@ -103,11 +103,34 @@ function editType(id,dom){
         <td class="ct">狀態</td>
         <td class="ct">操作</td>
     </tr>
+    <?php
+    $rows=$Item->all();
+    foreach($rows as $row):
+    ?>
     <tr class="pp">
-        <td class="ct"></td>
-        <td></td>
-        <td class="ct"></td>
-        <td class="ct"></td>
-        <td class="ct"></td>
+        <td class="ct"><?=$row['no'];?></td>
+        <td><?=$row['name'];?></td>
+        <td class="ct"><?=$row['stock'];?></td>
+        <td class="ct"><?=($row['sh']==1)?"販售中":"已下架";?></td>
+        <td class="ct">
+            <button onclick="location.href='?do=edit_item&id=<?=$row['id'];?>'">修改</button>
+            <button onclick="del('Item',<?=$row['id'];?>)">刪除</button>
+            <button onclick="sh(<?=$row['id'];?>,1,this)">上架</button>
+            <button onclick="sh(<?=$row['id'];?>,2,this)">下架</button>
+
+        </td>
     </tr>
+    <?php
+    endforeach;
+    ?>
 </table>
+<script>
+
+function sh(id,type,dom){
+    $.post("./api/sh.php",{type,id},function(){
+        //location.reload();
+
+        $(dom).parent().prev().text((type==1)?'販售中':'已下架');
+    })
+}
+</script>
