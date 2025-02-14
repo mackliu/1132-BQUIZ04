@@ -92,7 +92,7 @@ function editType(id,dom){
 
 <h2 class="ct">商品管理</h2>
 <div class="ct">
-    <button>新增商品</button>
+    <button onclick="location.href='?do=add_item'">新增商品</button>
 </div>
 
 <table class="all">
