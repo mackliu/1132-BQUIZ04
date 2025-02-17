@@ -25,7 +25,6 @@ function all(...$arg){
     if(!empty($arg[1])){
         $sql .= $arg[1];
     }
-
     return $this->fetch_all($sql);
 }
 
