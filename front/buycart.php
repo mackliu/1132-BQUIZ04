@@ -24,15 +24,26 @@ if(!isset($_SESSION['Mem'])){
         <td>小計</td>
         <td>刪除</td>
     </tr>
+    <?php 
+    foreach($_SESSION['cart'] as $id => $qt):
+        $item=$Item->find($id);
+    ?>
     <tr class="pp">
-        <td class="ct"></td>
-        <td ></td>
-        <td class="ct"></td>
-        <td class="ct"></td>
-        <td class="ct"></td>
-        <td class="ct"></td>
+        <td class="ct"><?=$item['no'];?></td>
+        <td ><?=$item['name'];?></td>
+        <td class="ct"><?=$qt;?></td>
+        <td class="ct"><?=$item['stock'];?></td>
+        <td class="ct"><?=$item['price'];?></td>
+        <td class="ct">
+            <?php
+                echo $item['price']*$qt;
+            ?>
+        </td>
         <td class="ct">
             <img src="./icon/0415.jpg" alt="">
         </td>
     </tr>
+    <?php
+    endforeach;
+    ?>
 </table>
