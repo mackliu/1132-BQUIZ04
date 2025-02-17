@@ -34,6 +34,7 @@ $user=$Mem->find(['acc'=>$_SESSION["Mem"]]);
         <td>小計</td>
     </tr>
     <?php
+    $sum=0;
     foreach($_SESSION['cart'] as $id => $qt):
         $item=$Item->find($id);
     ?>
@@ -45,6 +46,7 @@ $user=$Mem->find(['acc'=>$_SESSION["Mem"]]);
         <td class="ct">
             <?php
                 echo $item['price']*$qt;
+                $sum=$sum+($item['price']*$qt);
             ?>
         </td>
     </tr>
@@ -52,6 +54,7 @@ $user=$Mem->find(['acc'=>$_SESSION["Mem"]]);
     endforeach;
     ?>
 </table>
+<div class="all tt ct" style="padding:5px;margin-top:0">總價:<?=$sum;?></div>
 <div class="ct">
     <button>確定送出</button>
     <button onclick="location.href='?do=buycart'">返回修改訂單</button>
