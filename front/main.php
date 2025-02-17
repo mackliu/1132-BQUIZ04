@@ -34,11 +34,11 @@ if($typeId==0){
 </style>
 <?php 
 if($typeId==0){
-    $rows=$Item->all();
+    $rows=$Item->all(['sh'=>1]);
 }else if($type['big_id']==0){
-    $rows=$Item->all(['big'=>$typeId]);
+    $rows=$Item->all(['big'=>$typeId,'sh'=>1]);
 }else{
-    $rows=$Item->all(['mid'=>$typeId]);
+    $rows=$Item->all(['mid'=>$typeId,'sh'=>1]);
 }
 ?>
 <?php
