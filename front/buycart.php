@@ -54,7 +54,7 @@ if(!isset($_SESSION['Mem'])){
 <script>
     function delCart(id){
         $.post("./api/delcart.php",{id},function(){
-            location.reload();
+            location.href='?do=buycart';
         })
     }
 </script>
