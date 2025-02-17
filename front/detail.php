@@ -27,7 +27,7 @@ $row=$Item->find($_GET['id']);
         </a>
     </div>
     <div>
-        <div class='pp'>分類:</div>
+        <div class='pp'>分類:<?=$Type->find($row['big'])['name'] . ">". $Type->find($row['mid'])['name'];?></div>
         <div class='pp'>編號:<?=$row['no'];?></div>
         <div class='pp'>價錢:<?=$row['price'];?></div>
         <div class='pp'>詳細說明:<?=nl2br($row['intro']);?></div>

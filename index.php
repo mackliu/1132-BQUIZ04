@@ -55,13 +55,14 @@
 
         <div id="left" class="ct">
             <div style="min-height:400px;">
-                <a href="?type=0">全部商品</a>
+                <a href="?type=0">全部商品(<?=$Item->count(['sh'=>1]);?>)</a>
             <?php 
             $bigs=$Type->all(['big_id'=>0]);
             foreach($bigs as $big){
                 echo "<div class='ww'>";
                 echo    "<a href='?type={$big['id']}'>";
                 echo    $big['name'];
+                echo "({$Item->count(['big'=>$big['id'],'sh'=>1])})";
                 echo    "</a>";
                 if($Type->count(['big_id'=>$big['id']])>0){
                     $mids=$Type->all(['big_id'=>$big['id']]);
@@ -69,6 +70,7 @@
                     foreach($mids as $mid){
                         echo "<a href='?type={$mid['id']}' style='background-color: #7ee185;'>";
                         echo $mid['name'];
+                        echo "({$Item->count(['mid'=>$mid['id'],'sh'=>1])})";
                         echo "</a>";
                     }
                     echo "</div>";
