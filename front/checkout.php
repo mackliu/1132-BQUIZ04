@@ -1,5 +1,11 @@
 
 <?php
+
+/* if(empty($_SESSION['cart'])){
+    to("index.php?do=buycart&err=1");
+    exit();
+} */
+
 $user=$Mem->find(['acc'=>$_SESSION["Mem"]]);
 ?>
 <h2 class="ct">填寫資料</h2>
@@ -69,7 +75,11 @@ function checkout(){
         total:<?=$sum;?>,
         
     }
-    $.post("./api/checkout.php",data,function(){
+    $.post("./api/checkout.php",data,function(res){
+        if(res=='1'){
+            alert("購物車尚無商品，不需結帳");
+            return;
+        }
         alert("訂購成功\n感謝您的選購");
         location.href='?do=main';
     })

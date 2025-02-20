@@ -13,7 +13,12 @@ if(!isset($_SESSION['Mem'])){
 
 ?>
 <h2 class="ct"><?=$_SESSION['Mem'];?>的購物車</h2>
-
+<?php 
+/* if(isset($_GET['err']) && $_GET['err']==1){
+    echo "<h2 class='ct' style='font-size:26px;color:red'>購物車尚無商品，不需結帳</h2>";
+}
+ */
+?>
 <table class="all">
     <tr class="tt ct">
         <td>編號</td>
