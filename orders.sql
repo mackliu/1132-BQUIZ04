@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2025-02-20 01:55:51
+-- 產生時間： 2025-02-20 02:07:44
 -- 伺服器版本： 10.4.32-MariaDB
 -- PHP 版本： 8.2.12
 
@@ -36,7 +36,8 @@ CREATE TABLE `orders` (
   `tel` text NOT NULL,
   `total` int(10) UNSIGNED NOT NULL,
   `order_time` timestamp NOT NULL DEFAULT current_timestamp(),
-  `no` text NOT NULL
+  `no` text NOT NULL,
+  `cart` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
