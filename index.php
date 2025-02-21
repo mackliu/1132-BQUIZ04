@@ -24,7 +24,7 @@
                 <a href="?">回首頁</a> |
                 <a href="?do=news">最新消息</a> |
                 <a href="?do=look">購物流程</a> |
-                <a href="?do=buycart">購物車</a> |
+                <a href="?do=buycart">購物車<span id='items'></span></a> |
                 <?php 
                 if(empty($_SESSION['Mem'])){
                 ?>
@@ -106,3 +106,12 @@
 </body>
 
 </html>
+
+<script>
+    $.get("api/buycart.php",function(count){
+    console.log(count);
+    if(parseInt(count)>0){
+        $("#items").text(`(${count})`);
+    }
+})
+</script>

@@ -42,6 +42,14 @@ $row=$Item->find($_GET['id']);
 <script>
     function buy(){
         let qt=$("#qt").val();
-        location.href=`?do=buycart&id=<?=$_GET['id'];?>&qt=${qt}`;
+        buycart(<?=$_GET['id'];?>,qt)
     }
+
+    function buycart(id,qt){
+        console.log(id,qt)
+    $.post("api/buycart.php",{id,qt},function(count){
+        $("#items").text(`(${count})`);
+        alert("已加入購物車");
+    })
+}  
 </script>
