@@ -15,18 +15,17 @@
     <tr>
         <td class="tt ct">驗證碼</td>
         <td class="pp">
-            <?php
-                $a=rand(10,99);
-                $b=rand(10,99);
-                $_SESSION['ans']=$a+$b;
-                echo $a . " + " . $b . " = ";
-            ?>
+            <img src="" alt="" id="chapcha">
             <input type="text" name="ans" id="ans"></td>
     </tr>
 </table>
 <div class="ct"><button onclick="login()">確認</button></div>
 
 <script>
+    $.get("./api/code.php",function(res){
+        $("#chapcha").attr("src",res)
+    })
+
     function login(){
         let ans=$("#ans").val();
     
