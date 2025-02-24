@@ -36,7 +36,7 @@
          $gstr = $str;
  
          //定義字型大小
-         $fontsize = 24;
+         $fontsize = 20;
  
          //建立一個陣列用來儲存每一個字元的圖形資訊
          $text_info = [];
